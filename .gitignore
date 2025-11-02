@@ -1,0 +1,67 @@
+# -------------------------
+# OS-specific files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Node / Python / Other (if added later)
+# -------------------------
+node_modules/
+__pycache__/
+*.pyc
+
+# -------------------------
+# Docker
+# -------------------------
+# Ignore build artifacts, volumes, and logs
+*.pid
+*.log
+*.tmp
+*.swp
+.env
+docker-compose.override.yml
+# Exclude Docker build cache directories
+**/.docker
+
+# -------------------------
+# Visual Studio Code
+# -------------------------
+.vscode/
+.history/
+*.code-workspace
+
+# -------------------------
+# Visual Studio
+# -------------------------
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]est[Rr]esult*/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+artifacts/
+
+# -------------------------
+# Others
+# -------------------------
+# Backup & temp files
+*.bak
+*.tmp
+*.old

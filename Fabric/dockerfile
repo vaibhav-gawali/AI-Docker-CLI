@@ -1,0 +1,16 @@
+FROM ubuntu:25.10
+
+WORKDIR /context
+
+RUN apt update -y && apt upgrade -y             # Update package lists and upgrade existing packages
+RUN apt install curl -y                         # curl is required to download the Fabric CLI installation script
+RUN apt install software-properties-common -y   # Required for adding add-apt-repository to switch yt-dlp repository to get the latest version
+RUN add-apt-repository ppa:tomtomtom/yt-dlp -y  # Switch installation location of yt-dlp to get the latest version
+RUN apt install yt-dlp -y                       # Fabric requires yt-dlp for processing YouTube videos
+
+# Install the Fabric CLI globally in the container
+# Below installation command is from official Fabric CLI installation instructions
+RUN curl -fsSL https://raw.githubusercontent.com/danielmiessler/fabric/main/scripts/installer/install.sh | bash
+
+# Set the entrypoint to run the Fabric CLI when the container starts
+ENTRYPOINT ["/root/.local/bin/fabric"]

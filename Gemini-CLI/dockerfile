@@ -1,8 +1,19 @@
-# Use an official Node.js runtime as a parent image
-FROM node:25.2-slim
+ARG BASE_IMAGE=vaibhavgawali/dotnet-node-python-openjdk  # Old image: vaibhavgawali/dotnet-node-python
+ARG BASE_IMAGE_VERSION=v1            # Old version: v2_Ubuntu25.10
+
+FROM ${BASE_IMAGE}:${BASE_IMAGE_VERSION}
+
+# Metadata labels for Docker Scout
+LABEL maintainer="vaibhav@vaibhavgawali.net" \
+      version="1.0.0" \
+      description="Gemini-CLI in Docker: AI-powered terminal tool for automation, coding, and multimodal tasks." \
+      vendor="Vaibhav M. Gawali" \
+      org.opencontainers.image.source="https://github.com/vaibhav-gawali/AI-Docker-CLI/tree/main/Gemini-CLI" \
+      org.opencontainers.image.documentation="https://github.com/vaibhav-gawali/AI-Docker-CLI/blob/main/Gemini-CLI/readme.md"
 
 # Set the working directory in the container
-WORKDIR /context
+WORKDIR /workspace
+VOLUME ["/workspace"]
 
 # Install the Gemini CLI globally in the container
 # The -g flag makes it available as a command-line executable

@@ -1,6 +1,7 @@
 ## How to Build and Run the Container
 ```bash
-docker build -t gemini-cli-image .
+docker build -t gemini-cli .
+docker build -t gemini-cli:v3_devtools -t gemini-cli:v3 -t gemini-cli:v3_0.15 -t gemini-cli:v3-dotnet-node-python-openjdk .
 ```
 
 Run the container: The CLI can now be run using your new image:

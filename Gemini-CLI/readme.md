@@ -48,7 +48,7 @@ docker run -it -v .:/context -e GEMINI_API_KEY="<API_key_goes_here>" --entrypoin
 docker run -it -v .:/context -e GEMINI_API_KEY="<API_key_goes_here>" gemini-cli-image
 ```
  
-When the container runs, the gemini command will execute immediately. The user will be prompted to authenticate by following a link in their browser the first time they use it.
+When the container runs, select the gemini key option passed via command line for first time you use it.
 
 ## References
 1. [Gemini-CLI API key can be created/found Here](https://aistudio.google.com/api-keys)
